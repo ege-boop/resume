@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmet Ege Aytac | Resume</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #010a14;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Professional name animation with subtle color transition */
+    .glow-text {
+      font-weight: bold;
+      font-size: 3.5rem;
+      background: linear-gradient(90deg, #ffffff, #00f0ff, #ffffff);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientFlow 8s ease infinite;
+      text-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+      letter-spacing: 1px;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Professional light beam effect */
+    .light-beams {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .beam {
+      position: absolute;
+      width: 1px;
+      height: 100vh;
+      background: linear-gradient(to bottom, rgba(0,240,255,0), rgba(0,240,255,0.4), rgba(0,240,255,0));
+      animation: moveBeam 10s linear infinite;
+      filter: blur(3px);
+      opacity: 0;
+    }
+
+    .beam:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .beam:nth-child(2) { left: 20%; animation-delay: 2s; }
+    .beam:nth-child(3) { left: 30%; animation-delay: 4s; }
+    .beam:nth-child(4) { left: 40%; animation-delay: 6s; }
+    .beam:nth-child(5) { left: 50%; animation-delay: 8s; }
+    .beam:nth-child(6) { left: 60%; animation-delay: 1s; }
+    .beam:nth-child(7) { left: 70%; animation-delay: 3s; }
+    .beam:nth-child(8) { left: 80%; animation-delay: 5s; }
+    .beam:nth-child(9) { left: 90%; animation-delay: 7s; }
+
+    @keyframes moveBeam {
+      0% { opacity: 0; transform: translateY(100%); }
+      20% { opacity: 0.7; }
+      80% { opacity: 0.7; }
+      100% { opacity: 0; transform: translateY(-100%); }
+    }
+
+    /* Ambient underwater light effect */
+    .ambient-light {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 30%, rgba(0,240,255,0.05), transparent 70%);
+      animation: pulseLight 8s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes pulseLight {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Enhanced neon buttons */
+    .neon-border {
+      border: 2px solid #00f0ff;
+      box-shadow: 
+        0 0 5px #00f0ff, 
+        0 0 10px rgba(0, 240, 255, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    .neon-border:hover {
+      border-color: #ffffff;
+      box-shadow: 
+        0 0 10px #00f0ff, 
+        0 0 20px rgba(0, 240, 255, 0.7);
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+      background: rgba(0, 240, 255, 0.1);
+    }
+
+    /* Subtle dot particles */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background-color: rgba(0, 240, 255, 0.7);
+      border-radius: 50%;
+      box-shadow: 0 0 6px 1px rgba(0, 240, 255, 0.7);
+      animation: rise 15s linear infinite;
+    }
+
+    @keyframes rise {
+      0% {
+        opacity: 0;
+        transform: translateY(100%) translateX(0);
+      }
+      20% {
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(50%) translateX(20px);
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(0%) translateX(0);
+      }
+    }
+
+    /* Subtitle subtle glow */
+    .subtitle {
+      text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen text-white font-sans relative">
+  <!-- Ambient light effect -->
+  <div class="ambient-light"></div>
+  
+  <!-- Rising light beams -->
+  <div class="light-beams">
+    <div class="beam"></div>
+    <div class="beam"></div>
+    <div class="beam"></div>
+    <div class="beam"></div>
+    <div class="beam"></div>
+    <div class="beam"></div>
+    <div class="beam"></div>
+    <div class="beam"></div>
+    <div class="beam"></div>
+  </div>
+  
+  <!-- Particle effects -->
+  <div class="particles" id="particles"></div>
+  
+  <!-- Main content (without the rectangle box) -->
+  <div class="text-center space-y-8 z-10 relative">
+    <h1 class="glow-text">Ahmet Ege Aytac</h1>
+    <p class="subtitle text-lg md:text-xl text-gray-200">
+      <span class="block text-2xl font-semibold text-white mb-2">Majoring in Computer Science at Florida Atlantic University</span>
+      <span class="text-base font-light text-cyan-300"> Data Science & AI | Software engineering | Skilled in Python, R ,HTML & CSS,  Excel, and VHDL | Open to Project Opportunities and Innovation</span>
+    </p>
+        
+    <div class="flex flex-wrap justify-center gap-4 mt-8">
+      <a href="resume2.pdf" class="px-6 py-3 neon-border rounded-lg hover:bg-blue-900 transition-all duration-300">Resume</a>
+      <a href="https://github.com/ege-boop" class="px-6 py-3 neon-border rounded-lg hover:bg-blue-900 transition-all duration-300">GitHub</a>
+      <a href="https://www.linkedin.com/in/ahmetegeaytac" class="px-6 py-3 neon-border rounded-lg hover:bg-blue-900 transition-all duration-300">LinkedIn</a>
+      <a href="mailto:ahmegeaytac@hotmail.com" class="px-6 py-3 neon-border rounded-lg hover:bg-blue-900 transition-all duration-300">Email Me</a>
+      <a href="tel:+19545995431" class="px-6 py-3 neon-border rounded-lg hover:bg-blue-900 transition-all duration-300">Call</a>
+    </div>
+  </div>
+
+  <script>
+    // Generate particles
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 50;
+    
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      
+      // Random positions and timing
+      const size = Math.random() * 3 + 1;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.bottom = `-${Math.random() * 20}px`;
+      particle.style.opacity = Math.random() * 0.5 + 0.3;
+      
+      // Random animation duration and delay
+      const duration = Math.random() * 20 + 10;
+      const delay = Math.random() * 10;
+      particle.style.animationDuration = `${duration}s`;
+      particle.style.animationDelay = `${delay}s`;
+      
+      particlesContainer.appendChild(particle);
+    }
+  </script>
+</body>
+</html>
