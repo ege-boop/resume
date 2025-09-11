@@ -1,221 +1,449 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahmet Ege Aytac | Resume</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #010a14;
-      overflow: hidden;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    /* Professional name animation with subtle color transition */
-    .glow-text {
-      font-weight: bold;
-      font-size: 3.5rem;
-      background: linear-gradient(90deg, #ffffff, #00f0ff, #ffffff);
-      background-size: 200% 100%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradientFlow 8s ease infinite;
-      text-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
-      letter-spacing: 1px;
-    }
-
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Professional light beam effect */
-    .light-beams {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .beam {
-      position: absolute;
-      width: 1px;
-      height: 100vh;
-      background: linear-gradient(to bottom, rgba(0,240,255,0), rgba(0,240,255,0.4), rgba(0,240,255,0));
-      animation: moveBeam 10s linear infinite;
-      filter: blur(3px);
-      opacity: 0;
-    }
-
-    .beam:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .beam:nth-child(2) { left: 20%; animation-delay: 2s; }
-    .beam:nth-child(3) { left: 30%; animation-delay: 4s; }
-    .beam:nth-child(4) { left: 40%; animation-delay: 6s; }
-    .beam:nth-child(5) { left: 50%; animation-delay: 8s; }
-    .beam:nth-child(6) { left: 60%; animation-delay: 1s; }
-    .beam:nth-child(7) { left: 70%; animation-delay: 3s; }
-    .beam:nth-child(8) { left: 80%; animation-delay: 5s; }
-    .beam:nth-child(9) { left: 90%; animation-delay: 7s; }
-
-    @keyframes moveBeam {
-      0% { opacity: 0; transform: translateY(100%); }
-      20% { opacity: 0.7; }
-      80% { opacity: 0.7; }
-      100% { opacity: 0; transform: translateY(-100%); }
-    }
-
-    /* Ambient underwater light effect */
-    .ambient-light {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 50% 30%, rgba(0,240,255,0.05), transparent 70%);
-      animation: pulseLight 8s ease-in-out infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    @keyframes pulseLight {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.5; }
-    }
-
-    /* Enhanced neon buttons */
-    .neon-border {
-      border: 2px solid #00f0ff;
-      box-shadow: 
-        0 0 5px #00f0ff, 
-        0 0 10px rgba(0, 240, 255, 0.6);
-      transition: all 0.3s ease;
-    }
-
-    .neon-border:hover {
-      border-color: #ffffff;
-      box-shadow: 
-        0 0 10px #00f0ff, 
-        0 0 20px rgba(0, 240, 255, 0.7);
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
-      background: rgba(0, 240, 255, 0.1);
-    }
-
-    /* Subtle dot particles */
-    .particles {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .particle {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background-color: rgba(0, 240, 255, 0.7);
-      border-radius: 50%;
-      box-shadow: 0 0 6px 1px rgba(0, 240, 255, 0.7);
-      animation: rise 15s linear infinite;
-    }
-
-    @keyframes rise {
-      0% {
-        opacity: 0;
-        transform: translateY(100%) translateX(0);
-      }
-      20% {
-        opacity: 1;
-      }
-      50% {
-        transform: translateY(50%) translateX(20px);
-      }
-      80% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(0%) translateX(0);
-      }
-    }
-
-    /* Subtitle subtle glow */
-    .subtitle {
-      text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmet Ege Aytac | Computer Science Student & AI Researcher</title>
+    <link rel="icon" type="image/jpeg" href="logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+        .text-accent { color: #2563eb; }
+        .text-secondary { color: #6b7280; }
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+            transition: all 0.3s ease;
+            padding: 0.875rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 2px solid #2563eb;
+        }
+        .btn-primary:hover { 
+            background-color: #1d4ed8;
+            border-color: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #2563eb;
+            border: 2px solid #2563eb;
+            padding: 0.875rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #2563eb;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        .section-divider {
+             border-top: 1px solid #e5e7eb;
+             margin-top: 4rem;
+        }
+        .skill-tag {
+            background-color: #f3f4f6;
+            color: #374151;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s ease;
+        }
+        .skill-tag:hover {
+            background-color: #e5e7eb;
+            border-color: #d1d5db;
+        }
+        .project-card {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #2563eb;
+        }
+        .experience-card {
+            background-color: #f8fafc;
+            border-left: 4px solid #2563eb;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .achievement-badge {
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border: 1px solid #93c5fd;
+        }
+        .intro-highlight {
+            background: linear-gradient(120deg, #a7f3d0 0%, #fde68a 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+            padding: 0 0.1em;
+        }
+        nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .nav-link {
+            color: #374151;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: all 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #2563eb;
+            background-color: #f3f4f6;
+        }
+    </style>
 </head>
-<body class="flex items-center justify-center min-h-screen text-white font-sans relative">
-  <!-- Ambient light effect -->
-  <div class="ambient-light"></div>
-  
-  <!-- Rising light beams -->
-  <div class="light-beams">
-    <div class="beam"></div>
-    <div class="beam"></div>
-    <div class="beam"></div>
-    <div class="beam"></div>
-    <div class="beam"></div>
-    <div class="beam"></div>
-    <div class="beam"></div>
-    <div class="beam"></div>
-    <div class="beam"></div>
-  </div>
-  
-  <!-- Particle effects -->
-  <div class="particles" id="particles"></div>
-  
-  <!-- Main content (without the rectangle box) -->
-  <div class="text-center space-y-8 z-10 relative">
-    <h1 class="glow-text">Ahmet Ege Aytac</h1>
-    <p class="subtitle text-lg md:text-xl text-gray-200">
-      <span class="block text-2xl font-semibold text-white mb-2">Majoring in Computer Science at Florida Atlantic University</span>
-      <span class="text-base font-light text-cyan-300"> Data Science & AI | Software engineering | Skilled in Python, R ,HTML & CSS,  Excel, and VHDL | Open to Project Opportunities and Innovation</span>
-    </p>
-        
-    <div class="flex flex-wrap justify-center gap-4 mt-8">
-      <a href="resume2.pdf" class="px-6 py-3 neon-border rounded-lg hover:bg-blue-900 transition-all duration-300">Resume</a>
-      <a href="https://github.com/ege-boop" class="px-6 py-3 neon-border rounded-lg hover:bg-blue-900 transition-all duration-300">GitHub</a>
-      <a href="https://www.linkedin.com/in/ahmetegeaytac" class="px-6 py-3 neon-border rounded-lg hover:bg-blue-900 transition-all duration-300">LinkedIn</a>
-      <a href="mailto:ahmegeaytac@hotmail.com" class="px-6 py-3 neon-border rounded-lg hover:bg-blue-900 transition-all duration-300">Email Me</a>
-      <a href="tel:+19545995431" class="px-6 py-3 neon-border rounded-lg hover:bg-blue-900 transition-all duration-300">Call</a>
-    </div>
-  </div>
-
-  <script>
-    // Generate particles
-    const particlesContainer = document.getElementById('particles');
-    const particleCount = 50;
+<body class="antialiased">
     
-    for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('div');
-      particle.classList.add('particle');
-      
-      // Random positions and timing
-      const size = Math.random() * 3 + 1;
-      particle.style.width = `${size}px`;
-      particle.style.height = `${size}px`;
-      particle.style.left = `${Math.random() * 100}%`;
-      particle.style.bottom = `-${Math.random() * 20}px`;
-      particle.style.opacity = Math.random() * 0.5 + 0.3;
-      
-      // Random animation duration and delay
-      const duration = Math.random() * 20 + 10;
-      const delay = Math.random() * 10;
-      particle.style.animationDuration = `${duration}s`;
-      particle.style.animationDelay = `${delay}s`;
-      
-      particlesContainer.appendChild(particle);
-    }
-  </script>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50">
+        <div class="container mx-auto max-w-4xl px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-gray-900">Ahmet Ege Aytac</div>
+                <div class="hidden md:flex space-x-2">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto max-w-4xl px-4 py-16">
+
+        <header class="text-center pt-16">
+            <div class="flex justify-center items-center mb-4">
+                <img src="logo.png" alt="Ahmet Ege Aytac Logo" class="w-16 h-16 mr-4 object-contain">
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900">Ahmet Ege Aytac</h1>
+            </div>
+            <p class="mt-4 text-xl text-secondary font-medium">
+                Computer Science Student & AI Researcher
+            </p>
+            <p class="mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
+                Passionate Computer Science student at Florida Atlantic University specializing in <span class="intro-highlight">artificial intelligence and data science</span>. I focus on developing innovative solutions that bridge the gap between complex algorithms and real-world applications.
+            </p>
+            
+
+
+            <div class="mt-12 flex justify-center gap-4 flex-wrap">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="mailto:ahmegeaytac@hotmail.com" class="btn-secondary">Get In Touch</a>
+            </div>
+        </header>
+
+        <section id="about" class="py-16 mt-16 section-divider">
+             <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Technical Expertise</h2>
+             <p class="text-center text-secondary mb-8 max-w-2xl mx-auto">
+                 Proficient in modern programming languages and frameworks with hands-on experience in data analysis, machine learning, and full-stack development.
+             </p>
+             <div class="flex flex-wrap justify-center gap-3">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">R</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">HTML & CSS</span>
+                <span class="skill-tag">Flask</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">NumPy</span>
+                <span class="skill-tag">Matplotlib</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">Git & GitHub</span>
+                <span class="skill-tag">JMARS</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Data Visualization</span>
+             </div>
+        </section>
+        
+        <section id="projects" class="py-16 section-divider">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Featured Projects</h2>
+            <p class="text-center text-secondary mb-12 max-w-2xl mx-auto">
+                A selection of projects demonstrating my ability to solve complex problems through innovative software solutions and data-driven approaches.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="project-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-900">Vitamin Analyzer</h3>
+                        <span class="achievement-badge">Healthcare AI</span>
+                    </div>
+                    <p class="text-secondary mb-6">
+                        Intelligent health analysis system that processes blood test values and generates personalized vitamin recommendations using over 40 lab metrics. Features dynamic reference ranges and automated PDF report generation.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">PDF Generation</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-accent font-medium hover:underline">View Project</a>
+                        <span class="text-sm text-secondary">Machine Learning</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-900">Prepowl Quiz Platform</h3>
+                        <span class="achievement-badge">EdTech</span>
+                    </div>
+                    <p class="text-secondary mb-6">
+                        Advanced educational platform featuring adaptive learning algorithms, real-time performance analytics, and personalized study recommendations. Includes timed assessments and progress tracking.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Mobile Development</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Analytics</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-accent font-medium hover:underline">View Project</a>
+                        <span class="text-sm text-secondary">Full-Stack</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-900">Nefes Urla Booking System</h3>
+                        <span class="achievement-badge">Business Solution</span>
+                    </div>
+                    <p class="text-secondary mb-6">
+                        Complete digital solution for a boutique hospitality business including real-time booking management, payment processing, brand identity, and social media integration resulting in strong market presence.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag">Full-Stack Development</span>
+                        <span class="skill-tag">Payment Systems</span>
+                        <span class="skill-tag">Brand Design</span>
+                        <span class="skill-tag">Social Media</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-accent font-medium hover:underline">View Project</a>
+                        <span class="text-sm text-secondary">Live System</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-900">Statistical Analysis in R</h3>
+                        <span class="achievement-badge">Data Science</span>
+                    </div>
+                    <p class="text-secondary mb-6">
+                        Comprehensive data science projects analyzing large datasets (3,000+ records) to identify wage trends, market patterns, and statistical correlations using advanced R programming and visualization techniques.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag">R Programming</span>
+                        <span class="skill-tag">Statistical Modeling</span>
+                        <span class="skill-tag">Data Visualization</span>
+                        <span class="skill-tag">Trend Analysis</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/ege-boop" class="text-accent font-medium hover:underline">View on GitHub</a>
+                        <span class="text-sm text-secondary">Research</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-900">NASA Mars Mission Analysis</h3>
+                        <span class="achievement-badge">Aerospace Research</span>
+                    </div>
+                    <p class="text-secondary mb-6">
+                        Contributed to a comprehensive 350+ page robotic Mars mission proposal as part of NASA's L'SPACE Academy. Conducted site analysis using JMARS, CRISM data, and water resource mapping for optimal landing locations.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag">NASA JMARS</span>
+                        <span class="skill-tag">Geospatial Analysis</span>
+                        <span class="skill-tag">Research</span>
+                        <span class="skill-tag">Astrobiology</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-accent font-medium hover:underline">View Research</a>
+                        <span class="text-sm text-secondary">NASA Project</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-900">Professional Portfolio</h3>
+                        <span class="achievement-badge">Web Development</span>
+                    </div>
+                    <p class="text-secondary mb-6">
+                        Modern, responsive portfolio website showcasing professional experience and technical projects. Built with clean design principles, optimized performance, and accessibility best practices.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">Web Standards</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/ege-boop" class="text-accent font-medium hover:underline">View Source</a>
+                        <span class="text-sm text-secondary">Current Site</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="experience" class="py-16 section-divider">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Experience & Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-accent mb-8">Experience</h3>
+                    
+                    <div class="mb-8 bg-gray-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                        <h4 class="text-xl font-bold text-gray-900">NASA L'SPACE Mission Concept Academy</h4>
+                        <p class="text-accent font-semibold mb-3">Astrobiologist & Data Analyst | Summer 2025</p>
+                        <ul class="text-gray-700 space-y-2 ml-4">
+                            <li>• Collaborated on 4-month project with team of 15 interdisciplinary members</li>
+                            <li>• Analyzed optimal Mars landing sites using JMARS, CRISM, and water resource data</li>
+                            <li>• Planned scientific instruments within mass, budget, and lifetime constraints</li>
+                            <li>• Developed comprehensive mission analysis for 350+ page project outline</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 border-l-4 border-gray-400 p-6 rounded-r-lg">
+                        <h4 class="text-xl font-bold text-gray-900">Retail Sales Associate</h4>
+                        <p class="text-gray-600 font-semibold mb-3">Dick's Sporting Goods</p>
+                        <ul class="text-gray-700 space-y-2 ml-4">
+                            <li>• Developed strong communication and customer service skills</li>
+                            <li>• Managed sales floor operations and inventory systems</li>
+                            <li>• Collaborated effectively in fast-paced team environment</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-accent mb-8">Education</h3>
+                    
+                    <div class="mb-8 bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                        <h4 class="text-xl font-bold text-gray-900">Florida Atlantic University</h4>
+                        <p class="text-accent font-semibold mb-4">Bachelor of Arts in Computer Science</p>
+                        <div class="text-gray-700 space-y-2">
+                            <p><strong>GPA:</strong> 3.75 / 4.0</p>
+                            <p><strong>Expected Graduation:</strong> May 2027</p>
+                            <div class="mt-4">
+                                <p class="font-semibold text-gray-800 mb-2">Relevant Coursework:</p>
+                                <p class="leading-relaxed">Mobile App Development, Data Science, Deep Learning, Artificial Intelligence, Data Structures & Algorithms</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">Achievements</h4>
+                        <ul class="text-gray-700 space-y-3 ml-4">
+                            <li>• <strong>Top 50 Student at FAU</strong> - Awarded academic excellence grant</li>
+                            <li>• <strong>NASA L'SPACE Academy</strong> - Selected for competitive space mission program</li>
+                            <li>• <strong>Technical Portfolio</strong> - Multiple data-driven projects and applications</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 section-divider">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Professional Interests</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="text-center p-6 border border-gray-200 rounded-lg">
+                    <h3 class="text-lg font-bold text-accent mb-3">Research Collaboration</h3>
+                    <p class="text-secondary">Seeking opportunities in AI research, data science projects, and innovative technology development</p>
+                </div>
+                <div class="text-center p-6 border border-gray-200 rounded-lg">
+                    <h3 class="text-lg font-bold text-accent mb-3">Industry Partnerships</h3>
+                    <p class="text-secondary">Open to internships, startup collaborations, and real-world problem-solving initiatives</p>
+                </div>
+                <div class="text-center p-6 border border-gray-200 rounded-lg">
+                    <h3 class="text-lg font-bold text-accent mb-3">Technical Discussions</h3>
+                    <p class="text-secondary">Passionate about AI applications in healthcare, education technology, and data-driven solutions</p>
+                </div>
+                <div class="text-center p-6 border border-gray-200 rounded-lg">
+                    <h3 class="text-lg font-bold text-accent mb-3">Innovation Projects</h3>
+                    <p class="text-secondary">Interested in projects that bridge academic research with practical, impactful applications</p>
+                </div>
+            </div>
+            
+            <div class="text-center bg-gray-50 rounded-lg p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Let's Connect</h3>
+                <p class="text-lg text-secondary mb-6 max-w-2xl mx-auto">
+                    I'm passionate about leveraging artificial intelligence and data science to create meaningful solutions. Let's discuss how we can collaborate on innovative projects that make a real impact.
+                </p>
+                <div class="flex justify-center gap-4 flex-wrap">
+                    <a href="mailto:ahmegeaytac@hotmail.com" class="btn-primary">Send Message</a>
+                    <a href="https://www.linkedin.com/in/ahmetegeaytac" class="btn-secondary">LinkedIn Profile</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-16 section-divider pt-8">
+            <p class="text-secondary">&copy; 2025 Ahmet Ege Aytac. All Rights Reserved.</p>
+            <div class="mt-4 flex justify-center gap-6">
+                 <a href="https://github.com/ege-boop" class="text-secondary hover:text-accent font-medium">GitHub</a>
+                 <a href="https://www.linkedin.com/in/ahmetegeaytac" class="text-secondary hover:text-accent font-medium">LinkedIn</a>
+                 <a href="mailto:ahmegeaytac@hotmail.com" class="text-secondary hover:text-accent font-medium">Email</a>
+                 <a href="tel:+1234567890" class="text-secondary hover:text-accent font-medium">Phone</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navigation background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
