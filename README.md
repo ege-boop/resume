@@ -1,5 +1,5 @@
 # 💼 Resume Card
-
+# LINK : https://ege-boop.github.io/resume/ 
 ## 👋 Hi, I'm Ahmet Ege Aytac  
 🎓 Computer Science Student @ Florida Atlantic University (Expected May 2027)  
 📊 GPA: 3.7 | 🚀 NASA L’SPACE Mission Concept Academy – Astrobiologist & Data Analyst  
